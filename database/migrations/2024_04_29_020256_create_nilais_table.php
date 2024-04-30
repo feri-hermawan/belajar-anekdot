@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('nilais', function (Blueprint $table) {
             $table->id();
+            $table->foreignId("siswa_id");
+            $table->foreignId("tugas_id");
+            $table->float("nilai");
             $table->timestamps();
         });
     }

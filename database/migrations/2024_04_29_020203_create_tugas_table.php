@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('tugas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('kelas_id');
+            $table->dateTime("waktu_mulai");
+            $table->dateTime("waktu_selesai");
+            $table->boolean("status")->default(true);
             $table->timestamps();
         });
     }
