@@ -21,6 +21,7 @@ class UserController extends Controller
 
     public function Test()
     {
+        $test = "test";
         return "test";
     }
 }
