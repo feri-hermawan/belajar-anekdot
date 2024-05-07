@@ -19,9 +19,10 @@ class UserController extends Controller
         return  "Helo world";
     }
 
-    public function Test()
+    public function Profile()
     {
-        $test = "test";
-        return "test";
+        return view('profile', [
+            "title" => "Profile"
+        ]);
     }
 }

@@ -8,3 +8,5 @@ Route::middleware(['guest'])->group(function () {
     Route::get("/login", [AuthController::class, "Login"])->name("login");
     Route::get("/registrasi", [AuthController::class, "Registrasi"])->name("registrasi");
 });
+
+Route::get('/profile', [UserController::class, 'Profile'])->name('profile');

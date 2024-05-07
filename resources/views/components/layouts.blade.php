@@ -10,12 +10,13 @@
 </head>
 
 <body class="   ">
-    <!-- <x-navbar></x-navbar> -->
+    <x-navbar></x-navbar>
     <main>
         {{ $slot }}
     </main>
 
     <x-footer></x-footer>
+    <x-javascript-import></x-javascript-import>
 </body>
 
 </html>
