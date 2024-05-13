@@ -6,7 +6,13 @@ use Illuminate\Http\Request;
 
 class TugasController extends Controller
 {
-    public function Tugas()
+    public function ListTugas()
+    {
+        return view("list-tugas",[
+            "title" => "Tugas"
+        ]);
+    }
+    public function TugasById(int $tugasId, Request $request)
     {
         return view("tugas",[
             "title" => "Tugas"

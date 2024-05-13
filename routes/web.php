@@ -10,4 +10,6 @@ Route::middleware(['guest'])->group(function () {
 });
 
 Route::get('/profile', [UserController::class, 'Profile'])->name('profile');
-Route::get('/tugas',[\App\Http\Controllers\TugasController::class,'Tugas']);
+Route::get('/tugas',[\App\Http\Controllers\TugasController::class,'ListTugas']);
+Route::get('/tugas/{tugasId}',[\App\Http\Controllers\TugasController::class,'TugasById']);
+Route::get('/quiz',[\App\Http\Controllers\QuizController::class,'Quiz']);
