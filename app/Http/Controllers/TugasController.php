@@ -18,4 +18,10 @@ class TugasController extends Controller
             "title" => "Tugas"
         ]);
     }
+    public function DetailTugas(int $tugasId, Request $request)
+    {
+        return view("detail-tugas",[
+            "title" => "Detail Tugas"
+        ]);
+    }
 }
