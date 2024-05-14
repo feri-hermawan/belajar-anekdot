@@ -25,4 +25,8 @@ class UserController extends Controller
             "title" => "Profile"
         ]);
     }
+    public function ProfileGuru()
+    {
+        return view("guru-page.profile");
+    }
 }

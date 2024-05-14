@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('username');
+            $table->enum('jenis_kelamin',['laki-laki','perempuan'])->nullable();
             $table->string('password');
             $table->string('imgUri');
+            $table->string("bio")->nullable();
             $table->enum('role', ['guru', 'siswa']);
             $table->timestamps();
         });

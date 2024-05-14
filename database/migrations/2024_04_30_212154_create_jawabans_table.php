@@ -16,7 +16,9 @@ return new class extends Migration
             $table->foreignId("siswa_id");
             $table->foreignId("soal_id");
             $table->string("jawaban");
-            $table->timestamps();
+            $table->string("koreksi")->nullable();
+            $table->dateTime("created_at");
+            $table->dateTime("update_at");
         });
     }
 

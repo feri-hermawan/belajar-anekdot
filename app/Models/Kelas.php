@@ -11,7 +11,6 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class Kelas extends Model
 {
     use HasFactory;
-
     public function tugas(): HasMany
     {
         return $this->hasMany(Tugas::class);
