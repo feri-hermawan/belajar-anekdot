@@ -40,6 +40,12 @@
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
+                                    <label for="eMail">Jenis Kelamin</label>
+                                    <input type="text" class="form-control" id="eMail" placeholder="Masukan username" value="Perempuan" readonly>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
                                     <label for="phone">No. NIS</label>
                                     <input type="text" class="form-control" id="phone" placeholder="Masukan nomor NIS" value="12345678" readonly>
                                 </div>

@@ -24,6 +24,14 @@
                         <input type="text" class="form-control" id="username" aria-describedby="username" placeholder="Masukan username">
                     </div>
                     <div class="mb-3">
+                        <label for="username" class="form-label">Jenis Kelamin</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option disabled>Pilih Jenis Kelamin</option>
+                            <option selected value="laki-laki">Laki-laki</option>
+                            <option value="perempuan">Perempuan</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
                         <label for="nis" class="form-label">No. NIS</label>
                         <input type="text" class="form-control" id="nis" aria-describedby="nis" placeholder="Masukan nomor NIS">
                     </div>
