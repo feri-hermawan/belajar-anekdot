@@ -14,3 +14,4 @@ Route::get('/tugas',[\App\Http\Controllers\TugasController::class,'ListTugas'])-
 Route::get('/tugas/{tugasId}',[\App\Http\Controllers\TugasController::class,'TugasById'])->name("tugasById");
 Route::get('/tugas/detail/{tugasId}',[\App\Http\Controllers\TugasController::class,'DetailTugas'])->name("tugasDetail");
 Route::get('/quiz',[\App\Http\Controllers\QuizController::class,'Quiz'])->name("quiz");
+Route::get('/materi-anekdot',[\App\Http\Controllers\Materi::class,'Materi'])->name("materi");

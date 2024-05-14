@@ -7,7 +7,7 @@
         <div class="navbar-nav d-flex- justify-content-end px-4 w-100">
             <a class="nav-item nav-link active text-white" href="{{route("profile")}}">Profile</a>
             <a class="nav-item nav-link text-white" href="{{route("tugas")}}">Tugas</a>
-            <a class="nav-item nav-link text-white" href="#">Materi</a>
+            <a class="nav-item nav-link text-white" href="{{route("materi")}}">Materi</a>
             <a class="nav-item nav-link text-white" href="{{route("quiz")}}">Quiz</a>
             <a class="nav-item nav-link text-white" href="#">Logout</a>
         </div>
