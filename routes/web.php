@@ -4,9 +4,10 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware(['guest'])->group(function () {
+Route::middleware(\App\Http\Middleware\GuestMiddleware::class)->group(function () {
     Route::get('/login', [AuthController::class, "Login"])->name("login");
-    Route::get('/registrasi', [AuthController::class, "Registrasi"])->name("registrasi");
+    Route::get('/register', [AuthController::class, "Registrasi"])->name("registrasi");
+    Route::post("/register",[AuthController::class,'CreateUser']);
 });
 
 Route::prefix("teacher")->group(function (){
@@ -14,7 +15,7 @@ Route::prefix("teacher")->group(function (){
 });
 
 Route::prefix("student")->group(function (){
-    Route::get('/profile', [UserController::class, 'Profile'])->name('profile');
+    Route::get('/profile', [UserController::class, 'Profile'])->name('profile')->middleware(\App\Http\Middleware\AuthMiddleware::class);
     Route::get('/tugas',[\App\Http\Controllers\TugasController::class,'ListTugas'])->name("tugas");
     Route::get('/tugas/{tugasId}',[\App\Http\Controllers\TugasController::class,'TugasById'])->name("tugasById");
     Route::get('/tugas/detail/{tugasId}',[\App\Http\Controllers\TugasController::class,'DetailTugas'])->name("tugasDetail");

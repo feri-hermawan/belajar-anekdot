@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class User extends Model
 {
+    protected $fillable = ['name','username','jenis_kelamin','nis','kode_kelas','password'];
     /* Khusus role guru */
     public function Kelas(): HasMany
     {
