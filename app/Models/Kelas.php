@@ -11,6 +11,9 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class Kelas extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['siswa_id','nis','kode_kelas'];
+    
     public function tugas(): HasMany
     {
         return $this->hasMany(Tugas::class);

@@ -27,6 +27,9 @@
                         <div>
                             <h1>Registrasi Guru</h1>
                         </div>
+                        <div>
+                            <input type="hidden" name="role" value="guru">
+                        </div>
                         <div data-mdb-input-init class="form-outline mb-4">
                             <label class="form-label" for="namalengkap">Nama Lengkap</label>
                             <input type="text" name="name" id="namalengkap" class="form-control form-control-lg @error('name') is-invalid @enderror" placeholder="Masukan nama lengkap" value="{{old('name')}}" />
