@@ -15,12 +15,12 @@ class Kelas extends Model
     {
         return $this->hasMany(Tugas::class);
     }
-    public function user(): BelongsTo
+    public function guru(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'guru_id');
+        return $this->belongsTo(Guru::class, 'guru_id');
     }
-    public function daftarsiswa(): HasOne
+    public function siswa(): HasOne
     {
-        return $this->hasOne(DaftarSiswa::class);
+        return $this->hasOne(Siswa::class);
     }
 }

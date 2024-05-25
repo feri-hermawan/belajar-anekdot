@@ -16,8 +16,6 @@ return new class extends Migration
             $table->string('name');
             $table->string('username');
             $table->enum('jenis_kelamin',['laki_laki','perempuan'])->nullable();
-            $table->string('nis');
-            $table->string('kode_kelas');
             $table->string('password');
             $table->string('imgUri')->nullable();
             $table->string("bio")->nullable();

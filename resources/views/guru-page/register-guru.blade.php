@@ -6,10 +6,10 @@
     </div>
     @endif
     @if(session()->has('failed')) :
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>Gagal!</strong> Nomor NIS yang anda masukan sudah dimasukan orang lain.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Gagal!</strong> Nomor NIS yang anda masukan sudah dimasukan orang lain.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
     @endif
 
     <x-slot:title>{{$title}}</x-slot:title>
@@ -25,7 +25,7 @@
                         @csrf
                         @method('POST')
                         <div>
-                            <h1>Registrasi Siswa</h1>
+                            <h1>Registrasi Guru</h1>
                         </div>
                         <div data-mdb-input-init class="form-outline mb-4">
                             <label class="form-label" for="namalengkap">Nama Lengkap</label>
@@ -46,32 +46,13 @@
                             @enderror
                         </div>
                         <div data-mdb-init class="form-outline mb-4">
-                        <label class="form-label" for="username">Jenis Kelamin</label>
+                            <label class="form-label" for="username">Jenis Kelamin</label>
                             <select name="jenis_kelamin" class="form-select" aria-label="Default select example">
                                 <option selected>Pilih jenis kelamin</option>
                                 <option value="laki_laki">Laki-laki</option>
                                 <option value="perempuan">Perempuan</option>
                             </select>
                         </div>
-                        <div data-mdb-input-init class="form-outline mb-4 siswaOnly">
-                            <label class="form-label" for="nis">No. NIS</label>
-                            <input type="text" name="nis" id="nis" class="form-control form-control-lg @error('nis') is-invalid @enderror" placeholder="Masukan nomor NIS" value="{{old('nis')}}" />
-                            @error('nis')
-                            <div id="validationServer03Feedback" class="invalid-feedback">
-                                {{$message}}
-                            </div>
-                            @enderror
-                        </div>
-                        <div data-mdb-input-init class="form-outline mb-4 siswaOnly">
-                            <label class="form-label" for="kodekalas">Kode Kelas</label>
-                            <input type="text" name="kode_kelas" id="kodekalas" class="form-control form-control-lg @error('kode_kelas') is-invalid @enderror" placeholder="Masukan kode kelas" value="{{old('kode_kelas')}}"/>
-                            @error('kode_kelas')
-                            <div id="validationServer03Feedback" class="invalid-feedback">
-                                {{$message}}
-                            </div>
-                            @enderror
-                        </div>
-
                         <!-- Password input -->
                         <div data-mdb-input-init class="form-outline mb-3">
                             <label class="form-label" for="password">Password</label>
@@ -88,8 +69,8 @@
                             <p class="small fw-bold mt-2 pt-1 mb-0">Sudah punya akun ?
                                 <a href="{{route('login')}}" class="link-danger">Login</a>
                             </p>
-                            <p class="small fw-bold mt-2 pt-1 mb-0">Anda sebagai pengajar?
-                                <a href="{{route('teacher_register')}}" class="link-danger">Daftar di sini</a>
+                            <p class="small fw-bold mt-2 pt-1 mb-0">Anda sebagai pelajar?
+                                <a href="{{route('student_register')}}" class="link-danger">Daftar di sini</a>
                             </p>
                         </div>
 

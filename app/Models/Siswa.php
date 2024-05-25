@@ -5,16 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class DaftarSiswa extends Model
+class Siswa extends Model
 {
     use HasFactory;
-    public $timestamps = false;
 
-    public function siswa(): BelongsTo
+    public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class, "siswa_id");
+        return $this->belongsTo(User::class, 'siswa_id');
     }
     public function kelas(): BelongsTo
     {

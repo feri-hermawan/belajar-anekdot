@@ -5,7 +5,9 @@
 <x-header :title="$title"></x-header:title>
 
 <body class="">
-    <x-navbar></x-navbar>
+    @if(\Illuminate\Support\Facades\Auth::user()) :
+        <x-navbar></x-navbar>
+    @endif
     <main class="container">
         {{ $slot }}
     </main>

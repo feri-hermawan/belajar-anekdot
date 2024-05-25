@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class TugasController extends Controller
 {
+    /*Siswa Page*/
     public function ListTugas()
     {
         return view("list-tugas",[
@@ -22,6 +23,15 @@ class TugasController extends Controller
     {
         return view("detail-tugas",[
             "title" => "Detail Tugas"
+        ]);
+    }
+
+    /*Guru Page*/
+    public function DaftarTugas()
+    {
+        return view("guru-page.tugas",[
+            "title" => "Tugas",
+            "headerTitle" => "Daftar Tugas"
         ]);
     }
 }

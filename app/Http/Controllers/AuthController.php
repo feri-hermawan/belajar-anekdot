@@ -19,7 +19,14 @@ class AuthController extends Controller
     public function Registrasi()
     {
         return view("register", [
-            "title" => "Register"
+            "title" => "Register Siswa"
+        ]);
+    }
+
+    public function TeacherRegister()
+    {
+        return view('guru-page.register-guru',[
+            "title" => "Register Guru"
         ]);
     }
 

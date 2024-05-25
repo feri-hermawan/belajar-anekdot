@@ -17,9 +17,14 @@ class User extends Model
     }
 
     /* khusus role siswa */
-    public function daftarsiswa(): HasOne
+    public function siswa(): HasOne
     {
-        return $this->hasOne(DaftarSiswa::class, "siswa_id");
+        return $this->hasOne(Siswa::class);
+    }
+
+    public function guru() : HasOne
+    {
+        return $this->hasOne(Guru::class);
     }
     public function nilai(): HasMany
     {
