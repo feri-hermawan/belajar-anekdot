@@ -68,16 +68,14 @@ class AuthController extends Controller
         $user = User::create($dataValidate);
 
         if($user->role == "siswa"){
-            $siswa = Siswa::create([
+            Siswa::create([
                 'siswa_id' => $user->id,
                 'nis' => $dataSiswa['nis'],
                 'kode_kelas' => $dataSiswa['kode_kelas']
             ]);
-
-            return redirect()->route('profile');
         }
 
-        return redirect()->route('profile_guru');
+        return redirect()->route('login')->with('success', 'Akun berhasil di buat');
         
     }
 }

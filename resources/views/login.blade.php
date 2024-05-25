@@ -1,5 +1,11 @@
 <x-layouts>
     <x-slot:title>{{ $title }}</x-slot:title>
+    @if(session()->has('success')) :
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+        <strong>Berhasil!</strong> Akun anda telah dibuat, silahkan lakukan login.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     <section class="vh-100">
         <div class="container-fluid h-custom">
             <div class="row d-flex justify-content-center align-items-center h-100">
