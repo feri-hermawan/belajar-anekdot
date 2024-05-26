@@ -27,14 +27,14 @@ class AuthController extends Controller
 
     public function TeacherRegister()
     {
-        return view('guru-page.register-guru',[
+        return view('guru-page.register-guru', [
             "title" => "Register Guru"
         ]);
     }
 
     public function CreateUser(Request $request)
     {
-        
+
         $dataValidate = $request->validate([
             'name' => 'required|max:100|string',
             'username' => 'required|unique:users|max:100',
@@ -43,7 +43,7 @@ class AuthController extends Controller
             'password' => 'required|min:4'
         ]);
 
-        if($dataValidate['role'] == "siswa"){
+        if ($dataValidate['role'] == "siswa") {
             $dataSiswa = $request->validate([
                 'nis' => 'required',
                 'kode_kelas' => 'required'
@@ -51,23 +51,23 @@ class AuthController extends Controller
         }
 
         $userCount = User::where('username', $dataValidate['username'])->count();
-        
-        if($userCount >= 1 && $dataValidate['role'] == "guru"){
+
+        if ($userCount >= 1 && $dataValidate['role'] == "guru") {
             return redirect()->route('teacher_register')->with('failed', 'username has already registered');
-        } elseif($userCount >= 1 && $dataValidate['role'] == "siswa"){
+        } elseif ($userCount >= 1 && $dataValidate['role'] == "siswa") {
             return redirect()->route('student_register')->with('failed', 'username has already registered');
         }
 
-        if($dataValidate['role'] == "siswa"){
+        if ($dataValidate['role'] == "siswa") {
             $kelas = Kelas::where('kode_kelas', $dataSiswa['kode_kelas'])->count();
-            if($kelas < 1){
+            if ($kelas < 1) {
                 return redirect()->route('student_register')->with('failed', 'Kode Kelas not found');
             }
         }
         $dataValidate['password'] = bcrypt($dataValidate['password']);
         $user = User::create($dataValidate);
 
-        if($user->role == "siswa"){
+        if ($user->role == "siswa") {
             Siswa::create([
                 'siswa_id' => $user->id,
                 'nis' => $dataSiswa['nis'],
@@ -76,6 +76,5 @@ class AuthController extends Controller
         }
 
         return redirect()->route('login')->with('success', 'Akun berhasil di buat');
-        
     }
 }
