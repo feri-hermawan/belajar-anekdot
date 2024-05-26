@@ -9,7 +9,7 @@
     </div>
     <ul class="sidebar-nav">
         <li class="sidebar-item">
-            <a href="{{route("profile_guru")}}" class="sidebar-link">
+            <a href="{{route("teacher_profile")}}" class="sidebar-link">
                 <i class="lni lni-user"></i>
                 <span>Profile</span>
             </a>
@@ -28,7 +28,7 @@
         </li>
     </ul>
     <div class="sidebar-footer">
-        <a href="#" class="sidebar-link">
+        <a href="{{route('logout')}}" class="sidebar-link">
             <i class="lni lni-exit"></i>
             <span>Logout</span>
         </a>

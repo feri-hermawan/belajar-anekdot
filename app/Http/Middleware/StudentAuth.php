@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class GuestMiddleware
+class StudentAuth
 {
     /**
      * Handle an incoming request.
@@ -16,8 +16,7 @@ class GuestMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::guest())
-        {
+        if(Auth::user()->role == 'student'){
             return $next($request);
         }
 

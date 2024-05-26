@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Repository\UserRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -27,9 +28,11 @@ class UserController extends Controller
     }
     public function ProfileGuru()
     {
+        $teacher = Auth::user();
         return view("guru-page.profile",[
             "title" => "Profile",
-            "headerTitle" => "Profile Guru"
+            "headerTitle" => "Profile Guru",
+            'teacher' => $teacher
         ]);
     }
 }

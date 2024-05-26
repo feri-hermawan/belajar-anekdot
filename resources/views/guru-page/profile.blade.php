@@ -11,7 +11,7 @@
                             <div class="d-flex justify-content-center">
                                 <img class="border border-1 border-dark rounded-circle" src="/img/gita-profile.jpg" alt="user-profile" style="width: 150px; height: 150px">
                             </div>
-                            <h5 class="text-center">Gita Sekar Andini</h5>
+                            <h5 class="text-center">{{$teacher->name}}</h5>
                         </div>
                         <div class="text-center">
                             <h5>About</h5>
@@ -31,19 +31,19 @@
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="name">Nama Lengkap</label>
-                                <input type="text" class="form-control" id="name" value="Gita Sekar Andini" placeholder="Masukan nama lengkap" readonly>
+                                <input type="text" class="form-control" id="name" value="{{$teacher->name}}" placeholder="Masukan nama lengkap" readonly>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="username">Username</label>
-                                <input type="text" class="form-control" id="username" value="gita123" readonly>
+                                <input type="text" class="form-control" id="username" value="{{$teacher->username}}" readonly>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="jenis_kelamin">Jenis Kelamin</label>
-                                <input type="text" class="form-control" id="jenis_kelamin" value="Perempuan" readonly>
+                                <input type="text" class="form-control" id="jenis_kelamin" value="{{$teacher->jenis_kelamin}}" readonly>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">

@@ -6,7 +6,9 @@ use App\Http\Requests\UserRegisterRequest;
 use App\Models\Kelas;
 use App\Models\Siswa;
 use App\Models\User;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class AuthController extends Controller
@@ -17,6 +19,24 @@ class AuthController extends Controller
         return view("login", [
             "title" => "Login"
         ]);
+    }
+
+    public function LoginUser(Request $request)
+    {
+        $inputLoginValidate = $request->validate([
+            'username' => 'required',
+            'password' => 'required'
+        ]);
+
+        if(Auth::attempt($inputLoginValidate)){
+            $request->session()->regenerate();
+
+            if(Auth::user()->role == "guru"){
+                return redirect()->route('teacher_profile');
+            }
+
+            return redirect()->route('student_profile');
+        }
     }
     public function Registrasi()
     {
@@ -76,5 +96,15 @@ class AuthController extends Controller
         }
 
         return redirect()->route('login')->with('success', 'Akun berhasil di buat');
+    }
+
+    public function Logout(Request $request) : RedirectResponse
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('login');
+
     }
 }
