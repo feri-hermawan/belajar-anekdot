@@ -15,6 +15,7 @@ class Soal extends Model
     {
         return $this->belongsTo(Tugas::class);
     }
+
     public function jawaban(): HasMany
     {
         return $this->hasMany(Jawaban::class);

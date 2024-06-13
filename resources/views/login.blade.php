@@ -1,41 +1,38 @@
-<x-layouts>
-    <x-slot:title>{{ $title }}</x-slot:title>
-    @if(session()->has('success')) :
-    <div class="alert alert-primary alert-dismissible fade show" role="alert">
-        <strong>Berhasil!</strong> Akun anda telah dibuat, silahkan lakukan login.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-    @endif
-    <section class="vh-100">
-        <div class="container-fluid h-custom">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-md-9 col-lg-6 col-xl-5">
-                    <img src="/img/student-login-illustration.png" class="img-fluid" alt="Sample image">
-                </div>
-                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                    <form method="POST" action="/login">
-                        @csrf
-                        <div>
-                            <h1>Login</h1>
-                        </div>
-                        <div data-mdb-input-init class="form-outline mb-4">
-                            <label class="form-label" for="username">Username</label>
-                            <input type="text" id="username" name="username" class="form-control form-control-lg" placeholder="Masukan username" />
-                        </div>
-                        <div data-mdb-input-init class="form-outline mb-3">
-                            <label class="form-label" for="password">Password</label>
-                            <input type="password" id="password" name="password" class="form-control form-control-lg" placeholder="Masukan password" />
-                        </div>
-                        <div class="text-center text-lg-start mt-4 pt-2">
-                            <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-                            <p class="small fw-bold mt-2 pt-1 mb-0">Belum punya akun ?
-                                <a href="{{route('student_register')}}" class="link-danger">Register</a>
-                            </p>
-                        </div>
-
-                    </form>
-                </div>
-            </div>
+<x-public.layouts>
+    <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+        <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+            <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
+            <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Masuk dengan akun anda</h2>
         </div>
-    </section>
-</x-layouts>
+
+        <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+            <form class="space-y-6" action="#" method="POST">
+                <div>
+                    <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Username</label>
+                    <div class="mt-2">
+                        <input id="email" name="username" type="text" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex items-center justify-between">
+                        <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+                    </div>
+                    <div class="mt-2">
+                        <input id="password" name="password" type="password" autocomplete="current-password" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
+                </div>
+            </form>
+
+            <p class="mt-10 text-center text-sm text-gray-500">
+                Belum memiliki akun ?
+                <a href="{{route('register')}}" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Daftar</a>
+            </p>
+        </div>
+    </div>
+</x-public.layouts>
+

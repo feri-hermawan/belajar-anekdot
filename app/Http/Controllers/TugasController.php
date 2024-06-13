@@ -7,31 +7,9 @@ use Illuminate\Http\Request;
 class TugasController extends Controller
 {
     /*Siswa Page*/
-    public function ListTugas()
+    public function DaftarTugasSiswa()
     {
-        return view("list-tugas",[
-            "title" => "Tugas"
-        ]);
-    }
-    public function TugasById(int $tugasId, Request $request)
-    {
-        return view("tugas",[
-            "title" => "Tugas"
-        ]);
-    }
-    public function DetailTugas(int $tugasId, Request $request)
-    {
-        return view("detail-tugas",[
-            "title" => "Detail Tugas"
-        ]);
+        return view('daftar-tugas');
     }
 
-    /*Guru Page*/
-    public function DaftarTugas()
-    {
-        return view("guru-page.tugas",[
-            "title" => "Tugas",
-            "headerTitle" => "Daftar Tugas"
-        ]);
-    }
 }

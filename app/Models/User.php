@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class User extends Authenticatable
 {
-    protected $fillable = ['name','username','jenis_kelamin','nis','kode_kelas','password','role'];
+    protected $fillable = ['name','username','gender','password','role'];
     /* Khusus role guru */
     public function Kelas(): HasMany
     {

@@ -13,14 +13,14 @@ class Kelas extends Model
     use HasFactory;
 
     protected $fillable = ['siswa_id','nis','kode_kelas'];
-    
+
     public function tugas(): HasMany
     {
         return $this->hasMany(Tugas::class);
     }
     public function guru(): BelongsTo
     {
-        return $this->belongsTo(Guru::class, 'guru_id');
+        return $this->belongsTo(User::class, 'guru_id');
     }
     public function siswa(): HasOne
     {

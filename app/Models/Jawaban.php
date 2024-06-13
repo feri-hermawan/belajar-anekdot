@@ -12,7 +12,7 @@ class Jawaban extends Model
 
     public function siswa(): BelongsTo
     {
-        return $this->belongsTo(User::class, "siswa_id");
+        return $this->belongsTo(Siswa::class, "siswa_id");
     }
     public function soal(): BelongsTo
     {

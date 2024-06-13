@@ -2,37 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Repository\UserRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules\Password;
+use Inertia\Inertia;
 
 class UserController extends Controller
 {
     protected $userRepo;
 
-    public function __construct(UserRepository $userRepository)
+    public function register()
     {
-        $this->userRepo = $userRepository;
+        return view('register');
     }
 
-    public function CreateAccount(Request $request)
+    public function profile()
     {
-        return  "Helo world";
+        return view('profile');
     }
 
-    public function Profile()
+    public function updateProfile()
     {
-        return view('profile', [
-            "title" => "Profile"
-        ]);
-    }
-    public function ProfileGuru()
-    {
-        $teacher = Auth::user();
-        return view("guru-page.profile",[
-            "title" => "Profile",
-            "headerTitle" => "Profile Guru",
-            'teacher' => $teacher
-        ]);
+        return view('update-profile');
     }
 }

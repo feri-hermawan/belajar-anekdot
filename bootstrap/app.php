@@ -11,7 +11,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->alias([
+            'TeacherAuth' => \App\Http\Middleware\TeacherAuth::class,
+            'StudentAuth' => \App\Http\Middleware\StudentAuth::class
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

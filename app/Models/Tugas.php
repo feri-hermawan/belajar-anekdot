@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Tugas extends Model
@@ -21,8 +22,8 @@ class Tugas extends Model
         return $this->hasOne(Soal::class, "tugas_id");
     }
 
-    public function nilai(): HasOne
+    public function nilai(): HasMany
     {
-        return $this->hasOne(Nilai::class);
+        return $this->hasMany(Nilai::class);
     }
 }
