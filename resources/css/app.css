@@ -30,3 +30,19 @@
 .hamburger-active > span:nth-child(3){
     @apply -rotate-45
 }
+
+.table-tugas {
+    @apply border-2 px-2 py-2;
+}
+
+.tugas-selesai {
+    @apply border-2 rounded-xl bg-green-500 text-white text-sm md:text-lg;
+}
+
+.tugas-belum-selesai{
+    @apply border-2 bg-red-500 text-white rounded-xl text-sm md:text-lg;
+}
+
+.input-up-img {
+    @apply block border-2 border-teal-500 rounded-md file:bg-teal-500 file:text-white file:border-teal-500 hover:file:bg-teal-700;
+}

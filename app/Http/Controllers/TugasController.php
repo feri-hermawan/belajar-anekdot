@@ -12,4 +12,8 @@ class TugasController extends Controller
         return view('daftar-tugas');
     }
 
+    public function ViewTugasById(int $id)
+    {
+        return view('tugas');
+    }
 }

@@ -6,10 +6,8 @@ use Illuminate\Http\Request;
 
 class Materi extends Controller
 {
-    public function Materi()
+    public function index()
     {
-        return view("materi",[
-            "title" => "Materi Anekdot"
-        ]);
+        return view('materi');
     }
 }
