@@ -2,7 +2,7 @@
     <div class="text-2xl md:text-4xl text-center mt-2">
         <span class="font-bold">Materi</span>
     </div>
-    <div id="konten-materi" class="mt-4 mb-8 h-[600px] md:h-[560px] md:mt-8">
+    <div id="konten-materi" class="mt-4 mb-8 h-[600px] md:h-[500px] md:mt-8">
         <div class="text-left h-full overflow-y-auto">
             <p class="px-6">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elit mauris, fermentum sit amet dolor in, porta malesuada dui. Suspendisse potenti. Etiam feugiat facilisis tortor vel tristique. Nam euismod sapien vehicula, pharetra velit eget, ornare odio. Aenean id eros odio. Pellentesque sit amet commodo neque. Cras bibendum, metus eu cursus egestas, neque ante scelerisque tellus, at condimentum est ante at mi. Integer quis odio arcu.

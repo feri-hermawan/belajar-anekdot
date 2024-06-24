@@ -12,7 +12,7 @@ class Kelas extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['siswa_id','nis','kode_kelas'];
+    protected $fillable = ['siswa_id','kode_kelas'];
 
     public function tugas(): HasMany
     {

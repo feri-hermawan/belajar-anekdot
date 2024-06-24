@@ -10,12 +10,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     @vite('resources/css/app.css')
-    <title>Document</title>
+    <title>{{$title}}</title>
 </head>
 <body class="font-inter bg-main">
 <div>
     {{$slot}}
 </div>
 </body>
-<script src="/js/script.js"></script>
+<script src="/js/public-script.js"></script>
 </html>

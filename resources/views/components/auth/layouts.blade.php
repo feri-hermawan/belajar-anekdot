@@ -13,7 +13,7 @@
     <!--- Trix Editor CDn --->
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.8/dist/trix.css">
     <script type="text/javascript" src="https://unpkg.com/trix@2.0.8/dist/trix.umd.min.js"></script>
-    <title>Document</title>
+    <title>{{$title}}</title>
     <style>
         trix-toolbar [data-trix-button-group="file-tools"]{
             display: none;

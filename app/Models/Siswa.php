@@ -10,6 +10,7 @@ class Siswa extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['siswa_id','kelas_id'];
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, 'siswa_id');

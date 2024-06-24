@@ -17,3 +17,4 @@ Route::get('/daftar-tugas',[TugasController::class, 'DaftarTugasSiswa'])->name('
 Route::get('/tugas/{id}', [TugasController::class,'ViewTugasById']);
 Route::get('/materi',[\App\Http\Controllers\Materi::class,'index']);
 
+Route::post('/register',[UserController::class,'CreateUser']);
