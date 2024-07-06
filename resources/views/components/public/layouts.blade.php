@@ -11,8 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     @vite('resources/css/app.css')
     <title>{{$title}}</title>
+
 </head>
 <body class="font-inter bg-main">
+@include('sweetalert::alert')
 <div>
     {{$slot}}
 </div>

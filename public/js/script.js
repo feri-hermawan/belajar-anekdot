@@ -9,7 +9,4 @@ hamburger.addEventListener('click',()=>{
    sidebarDiv.classList.toggle('z-10');
 });
 
-//Toogle Input KodeKelas in registration
-console.log('testo');
-alert('fefe')
 

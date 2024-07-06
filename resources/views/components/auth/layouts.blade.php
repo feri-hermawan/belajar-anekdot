@@ -23,7 +23,11 @@
 <body class="font-inter bg-main">
 <div>
     <div class="block md:flex">
-    <x-auth.navbar></x-auth.navbar>
+        @if(auth()->user()->role == 'guru')
+        <x-auth.nav-bar-guru></x-auth.nav-bar-guru>
+        @else
+        <x-auth.navbar></x-auth.navbar>
+        @endif
         <div id="content" class="container bg-main md:h-lvh relative">
             {{$slot}}
         </div>
