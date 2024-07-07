@@ -18,8 +18,12 @@ Route::get('/tugas/{id}', [TugasController::class,'ViewTugasById']);
 Route::get('/materi',[\App\Http\Controllers\Materi::class,'index']);
 Route::get('/logout',[AuthController::class,'logout'])->middleware('auth');
 Route::get('/guru/kelas',[KelasController::class,'DaftarKelas']);
+Route::get('/guru/create-kelas',[KelasController::class,'CreateKelasPage']);
+Route::get('/detail-kelas/{id}',[KelasController::class,'DetailKelas']);
 
 Route::post('/register',[UserController::class,'CreateUser']);
 Route::post('/login',[AuthController::class,'login']);
 Route::post('/update-profile',[UserController::class,'updateUser'])->middleware('auth');
+Route::post('/kelas/create',[KelasController::class,'Create']);
+Route::post('/kelas/update',[KelasController::class,'Update']);
 

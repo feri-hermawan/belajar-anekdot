@@ -21,6 +21,7 @@
     </style>
 </head>
 <body class="font-inter bg-main">
+@include('sweetalert::alert')
 <div>
     <div class="block md:flex">
         @if(auth()->user()->role == 'guru')
